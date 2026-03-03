@@ -29,6 +29,21 @@ El objetivo del proyecto es gestionar usuarios con autenticación segura y opera
 - xUnit + Moq
 - Docker
 
+## 🏗️ Arquitectura
+
+El backend sigue principios de **Clean Architecture**, separando:
+
+- Domain
+- Application
+- Infrastructure
+- API
+
+Se utilizan:
+- CQRS con MediatR
+- Inyección de dependencias
+- Separación de responsabilidades
+- Principios SOLID
+
 ### Frontend
 - Angular 20
 - Bootstrap
@@ -149,6 +164,17 @@ Este usuario se crea automáticamente al iniciar la aplicación.
 
 ---
 
+## 🔄 Flujo de autenticación
+
+1. El usuario realiza login.
+2. El backend genera un JWT firmado.
+3. El frontend almacena el token.
+4. El token se envía en cada request en el header:
+
+Authorization: Bearer {token}
+
+---
+
 ## 📌 Endpoints de la API
 
 Todos los endpoints están documentados en Swagger:
@@ -191,8 +217,24 @@ Incluyen pruebas para:
 
 ---
 
+## 🧠 Decisiones técnicas
+
+- Se eligió SQLite para simplificar la evaluación y evitar dependencias externas.
+- Se utilizó Clean Architecture para mantener desacoplamiento y testabilidad.
+- JWT se implementó por ser un estándar ampliamente utilizado en APIs REST.
+- Docker permite ejecución inmediata sin configuración manual.
+
+---
+
 ## 📝 Notas finales
 
 - La base de datos SQLite se persiste mediante volúmenes Docker.
 - El proyecto está preparado para evaluación técnica inmediata.
 - Se priorizó arquitectura limpia, seguridad y buenas prácticas.
+
+---
+
+## 👤 Autor
+
+**Dario Correa Vélez**  
+Desarrollador FullStack  
