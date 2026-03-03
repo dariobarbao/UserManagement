@@ -1,0 +1,58 @@
+Listado de rutas de carpetas
+El n£mero de serie del volumen es 2C35-E83B
+C:.
+|   estructura.txt
+|   index.html
+|   main.ts
+|   styles.scss
+|   
++---app
+|   |   app.config.ts
+|   |   app.html
+|   |   app.routes.ts
+|   |   app.scss
+|   |   app.spec.ts
+|   |   app.ts
+|   |   
+|   +---auth
+|   |   |   auth-module.ts
+|   |   |   
+|   |   \---login
+|   |           login.html
+|   |           login.scss
+|   |           login.ts
+|   |           
+|   +---core
+|   |   |   core-module.ts
+|   |   |   
+|   |   +---guards
+|   |   |       auth.guard.ts
+|   |   |       
+|   |   +---interceptors
+|   |   |       jwt.interceptor.ts
+|   |   |       
+|   |   \---services
+|   |           auth.service.ts
+|   |           
+|   \---users
+|       +---models
+|       |       user-request.model.ts
+|       |       user.model.ts
+|       |       
+|       +---pages
+|       |   +---user-form
+|       |   |       user-form.html
+|       |   |       user-form.scss
+|       |   |       user-form.ts
+|       |   |       
+|       |   \---users-dashboard
+|       |           users-dashboard.html
+|       |           users-dashboard.scss
+|       |           users-dashboard.ts
+|       |           
+|       \---services
+|               users.service.ts
+|               
+\---environments
+        environment.ts
+        

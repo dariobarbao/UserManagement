@@ -1,0 +1,29 @@
+
+services:
+
+  usermanagement-backend:
+    build:
+      context: ./backend
+      dockerfile: UserManagement.WebAPI/Dockerfile
+    container_name: usermanagement-backend
+    ports:
+      - "5000:8080"
+    volumes:
+      - sqlite-data:/app
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    restart: always
+
+  usermanagement-frontend:
+    build:
+      context: ./frontend/users-management-frontend
+      dockerfile: Dockerfile
+    container_name: usermanagement-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - usermanagement-backend
+    restart: always
+
+volumes:
+  sqlite-data:

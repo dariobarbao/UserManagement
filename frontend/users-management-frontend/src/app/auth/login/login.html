@@ -1,0 +1,42 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4 shadow" style="max-width: 400px; width: 100%;">
+    <h2 class="text-center mb-4">Login</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" formControlName="email" class="form-control" placeholder="Ingrese su email" />
+        @if (form.get('email')?.invalid && form.get('email')?.touched) {
+          <div class="text-danger mt-1 small">
+            Email inválido
+          </div>
+        }
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="Ingrese su password" />
+        @if (form.get('password')?.invalid && form.get('password')?.touched) {
+          <div class="text-danger mt-1 small">
+            Password requerido
+          </div>
+        }
+      </div>
+
+      <!-- Error general -->
+      @if (errorMessage) {
+        <div class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+      }
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary w-100" [disabled]="loading">
+        {{ loading ? 'Ingresando...' : 'Login' }}
+      </button>
+    </form>
+  </div>
+</div>
